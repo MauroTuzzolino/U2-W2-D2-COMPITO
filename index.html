@@ -17,6 +17,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <style>
+      .badge-hot {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        border-radius: 5px;
+        font-weight: bold;
+        z-index: 10;
+      }
+    </style>
   </head>
   <body>
     <!--Navbar-->
@@ -24,9 +39,13 @@
       <div class="container">
         <img
           src="https://www.zarla.com/images/zarla-viaggit-1x1-2400x2400-20210608-hr8qmr3vpxfhk6j8y7pf.png?crop=1:1,smart&width=250&dpr=2"
-          class="img-fluid w-25"
-          alt="foto logo"
+          class="img-fluid"
+          width="70"
+          height="70"
+          alt="logo Viaggit"
         />
+        <button id="countTravelsBtn" class="btn btn-outline-info btn-sm d-none d-md-block">Conta Viaggi</button>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -45,16 +64,16 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Saldi</a>
+              <a class="nav-link" href="#sezioneSaldi">Saldi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Welcome Summer</a>
+              <a class="nav-link" href="#welcomeSummer">Welcome Summer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Last Minute</a>
+              <a class="nav-link" href="#lastMinute">Last Minute</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Recensioni</a>
+              <a class="nav-link" href="#recensioni">Recensioni</a>
             </li>
           </ul>
         </div>
@@ -73,72 +92,78 @@
 
     <!--Sezione saldi-->
     <div class="container my-5">
-      <h2 class="text-center mb-4">Saldi</h2>
-      <div class="row g-4">
-        <!--Card 1-->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card border-info border-2 h-100">
-            <div class="ratio ratio-4x3">
-              <img
-                src="https://media.gqitalia.it/photos/5d6e1c4e1c0b03000814c86e/1:1/w_3999,h_3999,c_limit/GettyImages-469187653.jpg"
-                class="img-fluid object-fit-cover"
-                alt="Destinazione 1"
-              />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Tokyo</h5>
-              <p class="card-text">La città immensa, di giorno e di notte!</p>
-              <a href="#" class="btn btn-info">Scopri di più</a>
+      <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+        <h2 class="mb-0">Saldi</h2>
+        <button class="btn btn-outline-info btn-sm" data-bs-toggle="collapse" data-bs-target="#sezioneSaldi">Toggle</button>
+      </div>
+
+      <div id="sezioneSaldi" class="collapse show">
+        <div class="row g-4">
+          <!--Card 1-->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card border-info border-2 h-100">
+              <div class="ratio ratio-4x3">
+                <img
+                  src="https://media.gqitalia.it/photos/5d6e1c4e1c0b03000814c86e/1:1/w_3999,h_3999,c_limit/GettyImages-469187653.jpg"
+                  class="img-fluid object-fit-cover"
+                  alt="Destinazione 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Tokyo</h5>
+                <p class="card-text">La città immensa, di giorno e di notte!</p>
+                <a href="#" class="btn btn-info">Scopri di più</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!--Card 2-->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card border-info border-2 h-100">
-            <div class="ratio ratio-4x3">
-              <img src="https://www.advantour.com/img/japan/images/osaka.jpg" class="img-fluid object-fit-cover" alt="Destinazione 2" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Osaka</h5>
-              <p class="card-text">Cibo, divertimento e vita notturna.</p>
-              <a href="#" class="btn btn-info">Scopri di più</a>
+          <!--Card 2-->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card border-info border-2 h-100">
+              <div class="ratio ratio-4x3">
+                <img src="https://www.advantour.com/img/japan/images/osaka.jpg" class="img-fluid object-fit-cover" alt="Destinazione 2" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Osaka</h5>
+                <p class="card-text">Cibo, divertimento e vita notturna.</p>
+                <a href="#" class="btn btn-info">Scopri di più</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!--Card 3-->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card border-info border-2 h-100">
-            <div class="ratio ratio-4x3">
-              <img
-                src="https://www.frontierassicurazioni.it/wp-content/uploads/2023/05/cosa-vedere-kyoto.jpg"
-                class="img-fluid object-fit-cover"
-                alt="Destinazione 3"
-              />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Kyoto</h5>
-              <p class="card-text">La città dei mille templi e la ex-capitale.</p>
-              <a href="#" class="btn btn-info">Scopri di più</a>
+          <!--Card 3-->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card border-info border-2 h-100">
+              <div class="ratio ratio-4x3">
+                <img
+                  src="https://www.frontierassicurazioni.it/wp-content/uploads/2023/05/cosa-vedere-kyoto.jpg"
+                  class="img-fluid object-fit-cover"
+                  alt="Destinazione 3"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Kyoto</h5>
+                <p class="card-text">La città dei mille templi e la ex-capitale.</p>
+                <a href="#" class="btn btn-info">Scopri di più</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!--Card 4-->
-        <div class="col-6 d-md-none d-lg-inline-block col-lg-3">
-          <div class="card border-info border-2 h-100">
-            <div class="ratio ratio-4x3">
-              <img
-                src="https://lp-cms-production.imgix.net/image_browser/shutterstockRF_168163925.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800"
-                class="img-fluid object-fit-cover"
-                alt="Destinazione 4"
-              />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Nara</h5>
-              <p class="card-text">La città dei cervi, dei templi e della cultura.</p>
-              <a href="#" class="btn btn-info">Scopri di più</a>
+          <!--Card 4-->
+          <div class="col-6 d-md-none d-lg-inline-block col-lg-3">
+            <div class="card border-info border-2 h-100">
+              <div class="ratio ratio-4x3">
+                <img
+                  src="https://lp-cms-production.imgix.net/image_browser/shutterstockRF_168163925.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800"
+                  class="img-fluid object-fit-cover"
+                  alt="Destinazione 4"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Nara</h5>
+                <p class="card-text">La città dei cervi, dei templi e della cultura.</p>
+                <a href="#" class="btn btn-info">Scopri di più</a>
+              </div>
             </div>
           </div>
         </div>
@@ -147,8 +172,11 @@
 
     <!--Sezione Welcome Summer-->
     <div class="container my-5">
-      <h2 class="text-center mb-4">Welcome Summer</h2>
-      <div class="row g-4">
+      <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+        <h2 class="mb-0">Welcome Summer</h2>
+        <button class="btn btn-outline-info btn-sm" data-bs-toggle="collapse" data-bs-target="#welcomeSummer">Toggle</button>
+      </div>
+      <div id="welcomeSummer" class="row g-4 collapse show">
         <!--Card 1-->
         <div class="col-6 col-md-6 col-lg-4 col-xl-2">
           <div class="card h-100 shadow-lg">
@@ -282,8 +310,11 @@
 
     <!--Sezione Last Minute-->
     <div class="container my-5">
-      <h2 class="text-center mb-4">Last Minute</h2>
-      <div class="row g-4">
+      <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+        <h2 class="mb-0">Last Minute</h2>
+        <button class="btn btn-outline-info btn-sm" data-bs-toggle="collapse" data-bs-target="#lastMinute">Toggle</button>
+      </div>
+      <div id="lastMinute" class="row g-4 collapse show">
         <!--Immagine 1-->
         <div class="col-6 col-md-4 col-xl-2">
           <div class="ratio ratio-4x3">
@@ -351,7 +382,7 @@
     <!--Sezione Recensioni-->
     <div class="container my-5">
       <h2 class="text-center mb-4">Recensioni</h2>
-      <div class="row g-4">
+      <div id="recensioni" class="row g-4">
         <!--Recensione 1-->
         <div class="col-12">
           <div class="d-flex align-items-start gap-3">
@@ -397,15 +428,80 @@
           <p class="mb-3">Email: info@viaggit.it</p>
         </div>
 
-        <a href="#" class="btn btn-info text-white fw-bold">Contattaci</a>
+        <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">Contattaci</button>
       </div>
     </footer>
+
+    <!--Modale per il contatto-->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contattaci</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="contactForm">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Messaggio</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submitBtn">Invia</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.getElementById("countTravelsBtn").addEventListener("click", function () {
+        const travelCards = document.querySelectorAll(".card");
+        const travelCount = travelCards.length;
+        alert("Numero di viaggi disponibili: " + travelCount);
+      });
+
+      document.getElementById("submitBtn").addEventListener("click", function () {
+        var modal = bootstrap.Modal.getInstance(document.getElementById("contactModal"));
+        modal.hide();
+
+        document.getElementById("contactForm").reset();
+        alert("Messaggio inviato!");
+      });
+
+      function aggiungiBadgeHot() {
+        const summerCards = document.querySelectorAll("#welcomeSummer .card");
+
+        summerCards.forEach((card) => {
+          const badge = document.createElement("div");
+          badge.classList.add("badge-hot");
+          badge.textContent = "HOT";
+
+          card.style.position = "relative";
+
+          card.appendChild(badge);
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", aggiungiBadgeHot);
+
+      //serve a rimuovere le card dal dom, non lo fa poiché non viene chiamata
+      function rimuoviTutteLeCard() {
+        const tutteLeCard = document.querySelectorAll(".card");
+        tutteLeCard.forEach((card) => card.remove());
+      }
+    </script>
   </body>
 </html>
 
